@@ -16,7 +16,7 @@ const Dashboard = () => {
   const fetchReports = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/analytics/reports');
+      const response = await axios.get('https://dashboard-fbbx.onrender.com/api/analytics/reports');
       console.log('Raw API response:', JSON.stringify(response.data, null, 2));
     
      
@@ -34,7 +34,7 @@ const Dashboard = () => {
     setError(null);
     try {
       console.log('Generating report for:', startDate, endDate);
-      const response = await axios.get('http://localhost:5000/api/analytics/generate', {
+      const response = await axios.get('https://dashboard-fbbx.onrender.com/api/analytics/generate', {
         params: { startDate, endDate },
       });
       console.log('API response:', JSON.stringify(response.data, null, 2));
